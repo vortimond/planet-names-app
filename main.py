@@ -1,15 +1,13 @@
-import tkinter as tk
+import random
 
-def on_submit():
-    name_label.configure(text=f'Hello, {name_inp.get()}.')
-
-root = tk.Tk()
-root.title('Name App')
-root.geometry('640x480')
-name_label = tk.Label(root, text='What is your name?', font='Arial 16')
-name_inp = tk.Entry(root, width=40)
-submit_btn = tk.Button(root, text='Submit Survey', command=on_submit)
-name_label.pack(pady=50)
-name_inp.pack(anchor='n')
-submit_btn.pack(padx=15, pady=15, anchor='ne')
-root.mainloop()
+planets = ["Mercury", "Venus", "Earth", "Mars", "Jupiter", "Saturn", "Uranus", "Neptune"]
+selected_planet = random.choice(planets)
+print("I have selected a planet from eight possible options:")
+print(planets)
+while True:
+    user_input = input("Tell me which one [q to quit]: ")
+    if user_input == "q":
+        break
+    elif user_input == selected_planet:
+        print("Correct!")
+        break

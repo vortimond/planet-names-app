@@ -1,13 +1,17 @@
 import random
 
+_line = "_" * 80
 planets = ["Mercury", "Venus", "Earth", "Mars", "Jupiter", "Saturn", "Uranus", "Neptune"]
 moons = [0, 0, 1, 2, 95, 274, 28, 16]
 attempts = 0
 random_planet = random.choice(planets)
 random_number = planets.index(random_planet)
-print("\nI have selected a planet from eight possible options:")
-print("Planets in our solar system:")
-print(f"{planets}\n")
+print(_line)
+print(" PLANET NAMES APP")
+print("\n I have selected a planet from eight possible options:")
+print(" Planets in our solar system:")
+print(f" {planets}")
+print(_line)
 
 # Read the previous results from a file
 print("Your previous results:")
@@ -18,6 +22,7 @@ try:
             print(line.strip())
 except FileNotFoundError:
     print("No saved results.")
+print(_line)
 
 while True:
     user_planet = input("\nTell me which one ['q' to quit]: ")

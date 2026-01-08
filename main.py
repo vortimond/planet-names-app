@@ -1,6 +1,7 @@
 import random
 
 planets = ["Mercury", "Venus", "Earth", "Mars", "Jupiter", "Saturn", "Uranus", "Neptune"]
+moons = [0, 0, 1, 2, 95, 274, 28, 16]
 attempts = 0
 random_planet = random.choice(planets)
 random_number = planets.index(random_planet)
@@ -27,11 +28,12 @@ while True:
         if random_number == user_number:
             print("Correct!")
             print(f"The selected planet was: {random_planet}")
+            print(f"Note: The planet {random_planet} has {moons[random_number]} moon(s).")
             print(f"You needed {attempts} attempts.")
 
             # Save the results into a file and exit the app
             with open('planet-names-app.txt', 'a') as file:
-                file.write(f"Planet = {random_planet} | Attempts = {attempts}\n")
+                file.write(f"Attempts = {attempts} | Planet = {random_planet}\n")
             break
         elif random_number > user_number:
             print("The planet is farther away from the Sun.")
